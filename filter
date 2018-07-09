@@ -1,0 +1,66 @@
+
+
+<div class="filter">
+
+  <div class="mask no-height"></div>
+
+  <div class="mask2 no-height"></div>
+
+  <div class="max-width">
+
+    <div class="float-right">
+
+      <span class="white realisation-filter"><?php _e('REALISATIONS', 'bv'); ?></span>
+
+      <button class="btn-filter" id="all"><?php _e('TOUS', 'bv'); ?></button>
+
+      <button class="btn-filter" id="engrenage"><?php _e('ENGRENAGES', 'bv'); ?></button>
+
+      <button class="btn-filter" id="usinage"><?php _e('USINAGE', 'bv'); ?></button>
+
+      <button class="btn-filter" id="soudure"><?php _e('SOUDURE', 'bv'); ?></button>
+
+    </div>
+
+</div>
+
+</div>		
+  	<!-- An element with an id is needed for the jQuery -->
+
+    <div class="white-back relative-back">
+
+      <div id="parent">
+
+        <!-- The base class is the box. Categories are then given as accessory classes. Any div can be in more than one category -->
+
+          <div class="box engrenage">
+          </div>
+          <div class="box usinage">
+          </div>
+          <div class="box soudure">
+          </div>
+      </div>
+    </div>  
+
+<script>
+		var $btns = jQuery('.btn-filter').click(function() {
+
+    if (this.id == 'all') {
+
+        jQuery('#parent > div').fadeIn(450);
+
+      } else {
+
+        var $el = jQuery('.' + this.id).fadeIn(450);
+
+        jQuery('#parent > div').not($el).hide();
+
+      }
+
+      $btns.removeClass('active');
+
+      jQuery(this).addClass('active');
+
+    });
+
+</script>
